@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "muninn-mcp-server"
+version = "0.1.0"
+description = "Muninn - Memory MCP Server with SQLite and Vector DB support"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Your Name", email = "your.email@example.com" }
+]
+dependencies = [
+    "mcp>=0.1.0",
+    "chromadb>=0.5.0",  # 0.5.0+ supports pydantic 2.x
+    "sentence-transformers>=2.2.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.scripts]
+muninn = "muninn_mcp_server.server:cli_main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
