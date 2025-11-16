@@ -1,8 +1,8 @@
 # Muninn MCP Server - justfile
 # Memory and knowledge management with SQLite and ChromaDB vector storage
 
-# Python to use (prefer 3.13+)
-python := `which python3.13 || which python3.14 || which python3`
+# Python to use (requires Python 3.13)
+python := "python3.13"
 
 # Default recipe
 default:
